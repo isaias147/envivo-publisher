@@ -1,0 +1,105 @@
+/* ===== EnVivo · hoja "Entrar con Google" ===== */
+/* Mismo patrón que la hoja de choque de /publicar/nuevo (.velo + .hoja),
+   con el look de cristal del mockup envivo-grupo1-publico.html. */
+
+.velo {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(9, 11, 30, 0.62);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: aparecer 0.15s ease;
+}
+
+.hoja {
+  composes: cristal from global;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 20px 20px 0 0;
+  padding: 14px 22px calc(26px + env(safe-area-inset-bottom));
+  animation: subir 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.asa {
+  width: 34px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--linea);
+  margin: 0 auto 18px;
+}
+
+.titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.descripcion {
+  font-size: 13px;
+  color: var(--hueso-tenue);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+/* Botón blanco, como el mockup. El latón se reserva para CTAs de EnVivo. */
+.google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--hueso);
+  color: var(--noche);
+  border: 0;
+  padding: 13px;
+  border-radius: 10px;
+  font-family: var(--fuente-cuerpo);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+.google:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.google svg {
+  flex-shrink: 0;
+}
+
+.ahoraNo {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: var(--hueso-tenue);
+  padding: 10px 8px 2px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 13px;
+  cursor: pointer;
+}
+.ahoraNo:hover {
+  color: var(--hueso);
+}
+
+.error {
+  color: var(--coral);
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes subir {
+  from {
+    transform: translateY(100%);
+  }
+}

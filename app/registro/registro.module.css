@@ -1,0 +1,295 @@
+/* ===== EnVivo · /registro/* (alta del publicador) ===== */
+/* /registro (datos, tipo por <select>), /registro/verificar (SMS + correo)
+   y /registro/perfil. Sigue envivo-registro-actualizado.html. */
+
+.pantalla {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 40px 20px 64px;
+  background: #0d0f26;
+}
+
+.marco {
+  width: 100%;
+  max-width: 360px;
+  background: var(--noche);
+  border: 1px solid var(--linea);
+  border-radius: 20px;
+  padding: 26px 22px 30px;
+}
+
+.marca {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+.marca i {
+  color: var(--laton);
+  font-style: normal;
+}
+
+.ruta {
+  font-size: 11px;
+  color: var(--hueso-tenue);
+  margin-bottom: 22px;
+}
+
+.tit {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 9px;
+}
+
+.bajada {
+  font-size: 13.5px;
+  color: var(--hueso-tenue);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ---------- botones ---------- */
+.principal {
+  width: 100%;
+  background: var(--laton);
+  color: var(--noche);
+  border: 0;
+  padding: 13px;
+  border-radius: 10px;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 14.5px;
+  cursor: pointer;
+}
+.principal:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.fantasma {
+  width: 100%;
+  background: transparent;
+  color: var(--hueso-tenue);
+  border: 1px solid var(--linea);
+  padding: 12px;
+  border-radius: 10px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 13.5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* ---------- campos ---------- */
+.campo {
+  margin-bottom: 14px;
+}
+.campo label {
+  font-size: 12px;
+  color: var(--hueso-tenue);
+  display: block;
+  margin-bottom: 6px;
+}
+.campo input,
+.campo select {
+  width: 100%;
+  background: var(--noche-2);
+  border: 1px solid var(--linea);
+  border-radius: 9px;
+  padding: 11px;
+  color: var(--hueso);
+  font-size: 14px;
+  font-family: var(--fuente-cuerpo);
+  outline: none;
+}
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--laton);
+}
+.telFila {
+  display: flex;
+  gap: 8px;
+}
+.telFila select {
+  width: 92px;
+  flex-shrink: 0;
+}
+
+.fila2 {
+  display: flex;
+  gap: 8px;
+}
+.fila2 .campo {
+  flex: 1;
+}
+
+.notaCampo {
+  font-size: 11px;
+  color: var(--hueso-tenue);
+  line-height: 1.5;
+  margin-top: 5px;
+}
+.notaCentrada {
+  font-size: 11.5px;
+  color: var(--hueso-tenue);
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.error {
+  color: var(--coral);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+/* ---------- separador de sección en el formulario ---------- */
+.seccion {
+  margin: 22px 0 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--linea);
+}
+.seccionTit {
+  font-size: 11px;
+  color: var(--laton);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.seccionSub {
+  font-size: 12px;
+  color: var(--hueso-tenue);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+/* ---------- /registro/verificar · tarjeta de canal ---------- */
+.canal {
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.canalHecho {
+  border-color: var(--cana);
+}
+.canalCab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.canalCab b {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 13.5px;
+}
+.canalEstado {
+  font-size: 11px;
+  color: var(--hueso-tenue);
+}
+.canalHecho .canalEstado {
+  color: var(--cana);
+}
+.canalDestino {
+  font-size: 12px;
+  color: var(--hueso-tenue);
+  word-break: break-word;
+  margin-bottom: 6px;
+}
+.canalHechoTexto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--cana);
+  padding: 6px 0 2px;
+}
+
+/* ---------- cajas de código (compartidas por los dos canales) ---------- */
+.codigoInputs {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin: 10px 0 8px;
+}
+.digitoInput {
+  width: 46px;
+  height: 56px;
+  text-align: center;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  background: var(--noche-2);
+  color: var(--hueso);
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 24px;
+  outline: none;
+  caret-color: var(--laton);
+  -moz-appearance: textfield;
+}
+.digitoInput:focus {
+  border-color: var(--laton);
+}
+.digitoInput.lleno {
+  border-color: var(--laton);
+  color: var(--laton);
+}
+.digitoInput:disabled {
+  opacity: 0.6;
+}
+.reintento {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--laton);
+  margin-top: 6px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.verificado {
+  text-align: center;
+  font-size: 13px;
+  color: var(--cana);
+  margin-top: 14px;
+}
+
+/* ---------- 7 · completar perfil ---------- */
+.avatarEditar {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  background: var(--noche-2);
+  border: 2px dashed var(--linea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 22px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  color: var(--hueso-tenue);
+}
+.avatarEditar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatarEditar input {
+  display: none;
+}
+
+.cargandoPantalla {
+  color: var(--hueso-tenue);
+  font-size: 14px;
+  padding-top: 40px;
+}
