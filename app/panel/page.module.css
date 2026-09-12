@@ -1,0 +1,142 @@
+/* ===== EnVivo · /panel (inicio del publicador) — placeholder ===== */
+/* Sigue la pantalla 9 de envivo-grupo2-publicador.html, sin las métricas
+   (chocan con la línea roja; se decide en la Sesión 15). */
+
+.pantalla {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 40px 20px 64px;
+  background: #0d0f26;
+}
+
+.marco {
+  width: 100%;
+  max-width: 360px;
+  background: var(--noche);
+  border: 1px solid var(--linea);
+  border-radius: 20px;
+  padding: 26px 22px 30px;
+}
+
+.marca {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+.marca i {
+  color: var(--laton);
+  font-style: normal;
+}
+
+.ruta {
+  font-size: 11px;
+  color: var(--hueso-tenue);
+  margin-bottom: 22px;
+}
+
+.tit {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 9px;
+}
+
+.bajada {
+  font-size: 13.5px;
+  color: var(--hueso-tenue);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.seguidores {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 13.5px;
+  color: var(--hueso-tenue);
+}
+.seguidoresNum {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--laton);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+  font-size: 12.5px;
+}
+.tabla th,
+.tabla td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--linea);
+}
+.tabla th {
+  color: var(--hueso-tenue);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.tabla th:not(:first-child),
+.tabla td:not(:first-child) {
+  text-align: right;
+}
+.tabla td:first-child {
+  color: var(--hueso);
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.accesos {
+  margin-top: 14px;
+}
+
+.acceso {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--linea);
+  font-size: 14px;
+  color: var(--hueso);
+  text-decoration: none;
+}
+.acceso .flecha {
+  color: var(--hueso-tenue);
+}
+.pronto {
+  opacity: 0.5;
+}
+.pronto .flecha {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.salir {
+  margin-top: 22px;
+  background: transparent;
+  border: 0;
+  color: var(--hueso-tenue);
+  font-family: var(--fuente-cuerpo);
+  font-size: 12.5px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+.salir:hover {
+  color: var(--hueso);
+}
