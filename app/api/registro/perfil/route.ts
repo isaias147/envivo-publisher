@@ -134,5 +134,5 @@ export async function POST(request: Request) {
   });
   tarro.delete(COOKIE_REGISTRO);
 
-  return NextResponse.json({ ok: true, destino: "/" });
+  return NextResponse.json({ ok: true, destino: "https://envivo.imsoluciones.com/publicar" });
 }

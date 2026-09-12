@@ -135,7 +135,7 @@ export default function PerfilNuevo() {
         setEnviando(false);
         return;
       }
-      router.replace(j.destino ?? "/");
+      window.location.href = j.destino ?? "/";
     } catch {
       setError("Falló la conexión. Intenta de nuevo.");
       setEnviando(false);
