@@ -1,13 +1,43 @@
+/* ===== EnVivo · variables globales ===== */
+/* Paleta de "cartelera de concierto" del CLAUDE.md. Fondo índigo, no negro. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Noche (fondos) */
+  --noche: #161a3d;
+  --noche-2: #1f2453;
+  --noche-3: #2a3068;
+
+  /* Acentos */
+  --laton: #ffb627; /* horas, CTA principal, estado activo. Nada más. */
+  --cana: #5fd6a0; /* gratis, en toda la app */
+  --coral: #ff5e5b;
+
+  /* Texto */
+  --hueso: #f4f1e8;
+  --hueso-tenue: #a7a9c4;
+
+  /* Líneas */
+  --linea: rgba(244, 241, 232, 0.14);
+
+  /* Alto de la barra inferior de tabs (Mapa · Lista · Siguiendo). Sin el
+     safe-area: cada pantalla lo suma aparte donde hace falta. */
+  --barra-inf: 56px;
+
+  /* Cristal: superficies flotantes translúcidas (barras, paneles, tarjetas).
+     Nunca para botones de acción ni estados activos: esos van en latón sólido. */
+  --cristal-fondo: rgba(22, 26, 61, 0.38);
+  --cristal-blur: blur(20px) saturate(180%);
+  --cristal-borde: 1px solid rgba(244, 241, 232, 0.14);
+  --cristal-sombra: 0 8px 32px rgba(0, 0, 0, 0.28);
+
+  /* Tipografía (las carga next/font en layout.tsx) */
+  --fuente-titulo: var(--font-archivo), system-ui, sans-serif;
+  --fuente-cuerpo: var(--font-instrument), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -22,19 +52,21 @@ body {
 
 body {
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--noche);
+  color: var(--hueso);
+  font-family: var(--fuente-cuerpo);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+button {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 a {
@@ -42,8 +74,12 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Clase utilitaria de superficie de cristal. Los módulos CSS la reutilizan
+   con `composes: cristal from global`. */
+.cristal {
+  background: var(--cristal-fondo);
+  backdrop-filter: var(--cristal-blur);
+  -webkit-backdrop-filter: var(--cristal-blur);
+  border: var(--cristal-borde);
+  box-shadow: var(--cristal-sombra);
 }
